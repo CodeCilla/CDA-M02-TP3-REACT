@@ -2,6 +2,7 @@ import { useEffect, useContext } from "react";
 import { EventContext } from "../context/EventContext";
 import EventCard from "./EventCard";
 import { fetchCities, fetchEvents } from "../services/api";
+import './EventList.css';
 
 export function EventList() {
   const { events, selectedCity, setEvents, setCity } = useContext(EventContext);

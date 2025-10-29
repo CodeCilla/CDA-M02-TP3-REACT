@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './EventCard.css';
 const EventCard = ({ name, image, date, location, category }) => {
   return (
     <div className='event-card'>
