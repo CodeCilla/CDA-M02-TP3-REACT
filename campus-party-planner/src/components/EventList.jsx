@@ -1,4 +1,5 @@
 import { EventContext } from "../context/EventContext";
+import { useContext } from "react";
 
 function EventList() {
   const { events } = useContext(EventContext);
