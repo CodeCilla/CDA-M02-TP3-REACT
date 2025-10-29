@@ -1,0 +1,16 @@
+.stats-chart {
+  max-width: 500px;
+  width: 90%;
+  margin: 40px auto;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+
+canvas {
+  width: 100%;
+  height: auto;
+}
