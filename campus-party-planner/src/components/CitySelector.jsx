@@ -1,29 +1,19 @@
-import { useEffect, useState, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { EventContext } from "../context/EventContext";
+import { fetchCities } from "../services/api";
 
-export function CitySelector() {
-  const [cities, setCities] = useState<string[]>([]);
+function CitySelector() {
   const { selectedCity, setCity } = useContext(EventContext);
+  const [cities, setCities] = useState([]);
 
   useEffect(() => {
-    const fetchCities = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/api/cities");
-        const data = await res.json();
-        setCities(data.data || []);
-      } catch (err) {
-        console.error("Failed to fetch cities:", err);
-      }
-    };
-
-    fetchCities();
+    fetchCities().then(setCities);
   }, []);
 
   return (
     <select
-      value={selectedCity || ""}
+      value={selectedCity}
       onChange={(e) => setCity(e.target.value)}
-      className="p-2 border rounded"
     >
       <option value="">All Cities</option>
       {cities.map((city) => (
@@ -34,3 +24,5 @@ export function CitySelector() {
     </select>
   );
 }
+
+export default CitySelector;
