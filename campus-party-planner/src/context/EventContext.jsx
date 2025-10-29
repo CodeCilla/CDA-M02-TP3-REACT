@@ -55,5 +55,3 @@ export function EventProvider({ children }) {
     </EventContext.Provider>
   );
 }
-
-
