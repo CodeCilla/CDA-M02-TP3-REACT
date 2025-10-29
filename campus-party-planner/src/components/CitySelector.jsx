@@ -16,10 +16,17 @@ function CitySelector() {
   }, []);
 
   // 2. load events whenever city changes
-  useEffect(() => {
-    if (!selectedCity) return;           // “All Cities” guard (change logic if needed)
+useEffect(() => {
+  if (!selectedCity) {
+    // “All Cities” — fetch every city’s events in parallel
+    Promise.all(cities.map(c => fetchEvents(c)))
+      .then(arrays => arrays.flat())           // merge all results
+      .then(setEvents);
+  } else {
+    // single city — your existing code
     fetchEvents(selectedCity).then(setEvents);
-  }, [selectedCity]);
+  }
+}, [selectedCity, cities]);
 
   return (
     <div className="city-selector">
