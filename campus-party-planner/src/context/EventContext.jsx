@@ -12,19 +12,13 @@ export function EventProvider({ children }) {
   // --- FONCTIONS ---
   const setCity = (city) => setSelectedCity(city);
 
-  const toggleLike = (eventId) => {
-    setLikedEvents((prev) => {
-      const updated = prev.includes(eventId)
-        ? prev.filter((id) => id !== eventId)
-        : [...prev, eventId];
-
-      saveLikes(updated);
-      return updated;
-    });
-  };
-
-  const saveLikes = (likes) => {
-    localStorage.setItem('likedEvents', JSON.stringify(likes));
+  const toggleLike = (id) => {
+    const updated = likedEvents.includes(id)
+      ? likedEvents.filter((id) => id !== id)
+      : [...likedEvents, id];
+    console.log('Updated liked events:', updated);
+    setLikedEvents(updated);
+    localStorage.setItem('likedEvents', JSON.stringify(likedEvents));
   };
 
   const loadLikes = () => {
@@ -48,7 +42,6 @@ export function EventProvider({ children }) {
         likedEvents,
         toggleLike,
         loadLikes,
-        saveLikes,
       }}
     >
       {children}
