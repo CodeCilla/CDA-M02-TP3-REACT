@@ -1,15 +1,24 @@
+import { useEffect, useContext } from "react";
 import { EventContext } from "../context/EventContext";
-import { useContext } from "react";
+import {EventCard} from "./EventCard";
 
-function EventList() {
-  const { events } = useContext(EventContext);
+export function EventList() {
+  const { events, selectedCity, setEvents } = useContext(EventContext);
+  
+  useEffect(() => {
+    fetchCities().then(setCities);
+  }, []);
+
+  const filteredEvents = events.filter((event) =>
+    selectedCity ? event.city === selectedCity : true
+  );
 
   return (
-    <ul>
-      {events.map(event => (
-        <li key={event.id}>{event.name}</li>
+    <div className="event-list">
+      {filteredEvents.map((event) => (
+        <EventCard key={event.id} event={event} />
       ))}
-    </ul>
+    </div>
   );
 }
 
