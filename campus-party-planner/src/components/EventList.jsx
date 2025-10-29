@@ -7,18 +7,7 @@ import './EventList.css';
 export function EventList() {
   const { events, selectedCity, setEvents, setCity } = useContext(EventContext);
 
-  // on mount: load cities and auto-select the first one
-  useEffect(() => {
-    fetchCities().then(cities => {
-      if (cities.length) setCity(cities[0]);
-    });
-  }, []);
 
-  // whenever selectedCity changes: load events for that city
-  useEffect(() => {
-    if (!selectedCity) return;          // guard against empty initial state
-    fetchEvents(selectedCity).then(setEvents);
-  }, [selectedCity]);
 
   return (
     <div className="event-list">
