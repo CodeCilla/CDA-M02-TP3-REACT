@@ -13,12 +13,15 @@ export function EventProvider({ children }) {
   const setCity = (city) => setSelectedCity(city);
 
   const toggleLike = (id) => {
-    const updated = likedEvents.includes(id)
-      ? likedEvents.filter((id) => id !== id)
-      : [...likedEvents, id];
+    let updated;
+    if (likedEvents.includes(id)) {
+      updated = likedEvents.filter((eventId) => eventId !== id);
+    } else {
+      updated = [...likedEvents, id];
+    }
     console.log('Updated liked events:', updated);
     setLikedEvents(updated);
-    localStorage.setItem('likedEvents', JSON.stringify(likedEvents));
+    localStorage.setItem('likedEvents', JSON.stringify(updated));
   };
 
   const loadLikes = () => {
