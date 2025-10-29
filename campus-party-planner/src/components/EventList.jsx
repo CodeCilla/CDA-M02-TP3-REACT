@@ -7,8 +7,6 @@ import './EventList.css';
 export function EventList() {
   const { events, selectedCity, setEvents, setCity } = useContext(EventContext);
 
-
-
   return (
     <div className="event-list">
       {events.map(event => (
