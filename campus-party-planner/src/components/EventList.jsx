@@ -1,12 +1,13 @@
 import { useEffect, useContext } from "react";
 import { EventContext } from "../context/EventContext";
-import {EventCard} from "./EventCard";
+import EventCard from "./EventCard";
+import { fetchCities } from "../services/api";
 
 export function EventList() {
-  const { events, selectedCity, setEvents } = useContext(EventContext);
+  const { events, selectedCity } = useContext(EventContext);
   
   useEffect(() => {
-    fetchCities().then(setCities);
+    fetchCities().then(selectedCity);
   }, []);
 
   const filteredEvents = events.filter((event) =>
