@@ -1,15 +1,16 @@
-import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
+import { EventContext } from "../context/EventContext";
+import EventCard from "./EventCard";
 
-function EventList() {
+export function EventList() {
   const { events } = useContext(EventContext);
 
   return (
-    <ul>
-      {events.map(event => (
-        <li key={event.id}>{event.name}</li>
+    <div className="event-list">
+      {events.map((event) => (
+        <EventCard key={event.id} event={event} />
       ))}
-    </ul>
+    </div>
   );
 }
 
