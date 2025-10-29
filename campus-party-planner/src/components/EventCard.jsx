@@ -8,8 +8,8 @@ const EventCard = ({ name, image, date, location, category }) => {
         src={image}
         alt={name}
       />
-      <p className="event-card__date">Date : {date}</p>
       <p className="event-card__location">Lieu: {location}</p>
+      <p className="event-card__date">Date : {date}</p>
       <p className="event-card__category">{category}</p>
     </div>
   );
