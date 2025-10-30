@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { EventContext } from "../context/EventContext";
 import { fetchCities, fetchEvents } from "../services/api";
-import "./CitySelector.css";
+import "../styles/components/CitySelector.css";
 
 function CitySelector() {
   const { selectedCity, setCity, setEvents } = useContext(EventContext); // ➜ import setEvents

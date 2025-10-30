@@ -1,7 +1,7 @@
 import StatsChart from '../components/StatsChart';
 import Header from '../components/Header';
 import CitySelector from '../components/CitySelector';
-import '../styles/StatsPage.css'; // ⬅️ le CSS ici
+import '../styles/pages/StatsPage.css';
 
 function StatsPage() {
   return (

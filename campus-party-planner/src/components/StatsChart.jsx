@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { EventContext } from '../context/EventContext';
 import { Pie, Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, BarElement, Tooltip, Legend } from 'chart.js';
+import '../styles/components/StatsChart.css';
 
 ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
