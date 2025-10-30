@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { EventContext } from "../context/EventContext";
 import EventCard from "./EventCard";
-import { fetchCities, fetchEvents } from "../services/api";
 import "../styles/components/EventList.css";
 
 export function EventList() {
@@ -18,6 +17,7 @@ export function EventList() {
           date={event.date}
           location={event.location}
           category={event.category}
+          liked={likedEvents.includes(event.id)}
         />
       ))}
     </div>
