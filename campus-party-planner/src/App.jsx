@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {EventProvider} from './context/EventContext';
 import HomePage from './pages/HomePage';
 import StatsPage from './pages/StatsPage';
-import './App.css';
 
 
 function App() {

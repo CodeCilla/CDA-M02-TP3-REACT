@@ -8,23 +8,22 @@ export function EventProvider({ children }) {
   const [events, setEvents] = useState([]); // Liste des événements
   const [selectedCity, setSelectedCity] = useState(''); // Ville choisie
   const [likedEvents, setLikedEvents] = useState([]); // Événements likés 💖
+  const [selectedCategory, setSelectedCategory] = useState(''); // Catégorie choisie
 
   // --- FONCTIONS ---
   const setCity = (city) => setSelectedCity(city);
+  const setCategory = (category) => setSelectedCategory(category);
 
-  const toggleLike = (eventId) => {
-    setLikedEvents((prev) => {
-      const updated = prev.includes(eventId)
-        ? prev.filter((id) => id !== eventId)
-        : [...prev, eventId];
-
-      saveLikes(updated);
-      return updated;
-    });
-  };
-
-  const saveLikes = (likes) => {
-    localStorage.setItem('likedEvents', JSON.stringify(likes));
+  const toggleLike = (id) => {
+    let updated;
+    if (likedEvents.includes(id)) {
+      updated = likedEvents.filter((eventId) => eventId !== id);
+    } else {
+      updated = [...likedEvents, id];
+    }
+    console.log('Updated liked events:', updated);
+    setLikedEvents(updated);
+    localStorage.setItem('likedEvents', JSON.stringify(updated));
   };
 
   const loadLikes = () => {
@@ -32,10 +31,10 @@ export function EventProvider({ children }) {
     if (stored) setLikedEvents(JSON.parse(stored));
   };
 
-  // --- Effet au montage : charger les likes sauvegardés ---
   useEffect(() => {
     loadLikes();
   }, []);
+  
 
   // --- Fournir les données et fonctions aux composants enfants ---
   return (
@@ -48,7 +47,8 @@ export function EventProvider({ children }) {
         likedEvents,
         toggleLike,
         loadLikes,
-        saveLikes,
+        selectedCategory,
+        setCategory,
       }}
     >
       {children}
