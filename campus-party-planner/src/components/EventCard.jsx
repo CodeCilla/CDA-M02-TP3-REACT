@@ -5,7 +5,7 @@ import { EventContext } from '../context/EventContext';
 import '../styles/components/EventCard.css';
 
 const EventCard = ({ event, liked, onClick }) => {
-  const { toggleLike } = useContext(EventContext);
+  const { toggleLike, darkMode } = useContext(EventContext);
   const { id, name, image, date, location, category } = event;
 
   const handleLikeClick = () => {
@@ -13,7 +13,7 @@ const EventCard = ({ event, liked, onClick }) => {
   };
 
   return (
-    <div className='event-card' onClick={onClick}>
+    <div className={`event-card ${darkMode ? 'event-card--dark' : ''}`} onClick={onClick}>
       <h2 className='event-card__name'>{name}</h2>
       <img className='event-card__image' src={image} alt={name} />
       <p className='event-card__location'>Lieu: {location}</p>
