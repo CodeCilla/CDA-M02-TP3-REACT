@@ -1,18 +1,20 @@
-//import StatsChart from '../components/StatsChart'; --- IGNORE ---
+import StatsChart from '../components/StatsChart';
 import Header from '../components/Header';
-//import Footer from '../components/Footer'; --- IGNORE ---
+import CitySelector from '../components/CitySelector';
+import '../styles/StatsPage.css'; // ⬅️ le CSS ici
 
 function StatsPage() {
   return (
-    <>
+    <div className="stats-page">
       <Header />
-    <h1>Statistics</h1>
-    <p>Here you can find various statistics about the campus party.</p>
-
-    {/* <StatsChart />  {/* Uncomment when StatsChart component is available */}
-
-    {/* <footer />  {/* Uncomment when Footer component is available */}
-    </>
+      <CitySelector />
+      <h1>Statistiques</h1>
+      <p>Ici vous pouvez trouver diverses statistiques sur les fêtes du campus!! 🥳​</p>
+      <div className="stats-chart">
+        <StatsChart />
+      </div>
+    </div>
   );
 }
+
 export default StatsPage;
