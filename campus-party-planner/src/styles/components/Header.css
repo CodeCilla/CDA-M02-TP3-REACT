@@ -79,3 +79,40 @@
     gap: 10px;
   }
 }
+
+/* --- Darkmode Header --- */
+.header--dark {
+  background: rgba(20, 20, 25, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header__title--dark {
+  background: linear-gradient(90deg, #ff5c8d, #ff97c2); /* you can keep accent colors but make 'em pop at night */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__nav--dark {
+  /* no extra styling needed, but you can adjust spacing or add subtle shadow if you want */
+}
+
+.header__link--dark {
+  color: #ccc; /* lighter muted color for darkmode */
+}
+
+.header__link--dark:hover {
+  color: #ff5c8d; /* accent color on hover */
+}
+
+.header__link--dark::after {
+  background: #ff5c8d; /* gradient underline in darkmode too */
+}
+
+/* Optional smooth transition for everything UwU */
+.header,
+.header__title,
+.header__nav,
+.header__link {
+  transition: all 0.3s ease;
+}

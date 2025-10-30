@@ -4,9 +4,10 @@ import { fetchCategories, fetchEvents } from "../services/api";
 import "../styles/components/Selector.css";
 
 function CategorySelector() {
-  const { selectedCity, selectedCategory, setCategory, setEvents } =
+  const { selectedCity, selectedCategory, setCategory, setEvents, darkmode } =
     useContext(EventContext);
   const [categories, setCategories] = useState([]);
+
 
   // 💫 Load categories when component mounts
   useEffect(() => {
@@ -14,15 +15,15 @@ function CategorySelector() {
       setCategories(c);
       if (c.length) setCategory(""); // default to “All Categories”
     });
-  }, []);
+  }, [setCategory]);
 
   // 🌸 Load events when category or city changes
   useEffect(() => {
     fetchEvents(selectedCity, selectedCategory).then(setEvents);
-  }, [selectedCity, selectedCategory]);
+  }, [selectedCity, selectedCategory, setEvents]);
 
   return (
-    <div className="selector">
+    <div className={`selector ${darkmode ? "selector--dark" : ""}`}>
       <select
         value={selectedCategory}
         onChange={(e) => setCategory(e.target.value)}

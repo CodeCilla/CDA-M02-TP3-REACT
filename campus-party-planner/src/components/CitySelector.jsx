@@ -4,7 +4,7 @@ import { fetchCities, fetchEvents } from "../services/api";
 import "../styles/components/Selector.css";
 
 function CitySelector() {
-  const { selectedCity, selectedCategory, setCity, setEvents } =
+  const { selectedCity, selectedCategory, setCity, setEvents, darkmode } =
     useContext(EventContext);
   const [cities, setCities] = useState([]);
 
@@ -22,7 +22,7 @@ function CitySelector() {
   }, [selectedCity, selectedCategory]);
 
   return (
-    <div className="selector">
+    <div className={`selector ${darkmode ? "selector--dark" : ""}`}>
       <select value={selectedCity} onChange={(e) => setCity(e.target.value)}>
         <option value="">All Cities</option>
         {cities.map((city) => (

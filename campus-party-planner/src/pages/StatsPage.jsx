@@ -1,15 +1,42 @@
-import StatsChart from '../components/StatsChart';
-import Header from '../components/Header';
-import CitySelector from '../components/CitySelector';
-import '../styles/pages/StatsPage.css';
+import { useContext } from "react";
+import StatsChart from "../components/StatsChart";
+import Header from "../components/Header";
+import CitySelector from "../components/CitySelector";
+import CategorySelector from "../components/CategorySelector";
+import { EventContext } from "../context/EventContext"; // ← grab darkmode flag
+import "../styles/pages/StatsPage.css";
 
 function StatsPage() {
+  const { darkmode } = useContext(EventContext);
+
   return (
-    <div className="stats-page">
+    <div className={`stats-page ${darkmode ? "stats-page--dark" : ""}`}>
       <Header />
-      <CitySelector />
-      <h1>Statistiques</h1>
-      <p>Ici vous pouvez trouver diverses statistiques sur les fêtes du campus!! 🥳​</p>
+      <div className="selectors-wrapper">
+        <div className="selector">
+          <CitySelector />
+        </div>
+        <div className="selector">
+          <CategorySelector />
+        </div>
+      </div>
+      <div className="stats-page__content">
+        <h1
+          className={`stats-page__title ${
+            darkmode ? "stats-page__title--dark" : ""
+          }`}
+        >
+          Statistiques
+        </h1>
+        <p
+          className={`stats-page__description ${
+            darkmode ? "stats-page__description--dark" : ""
+          }`}
+        >
+          Ici vous pouvez trouver diverses statistiques sur les fêtes du
+          campus!! 🥳
+        </p>
+      </div>
       <div className="stats-chart">
         <StatsChart />
       </div>
