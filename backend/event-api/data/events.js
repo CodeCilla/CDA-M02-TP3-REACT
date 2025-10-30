@@ -1,8 +1,3 @@
-/**
- * Dataset d'événements fictifs pour Rennes et Le Mans
- * Catégories : soirée, concert, festival, open-air
- */
-
 const events = [
   // RENNES - Soirées
   {
@@ -13,7 +8,8 @@ const events = [
     city: "Rennes",
     category: "soirée",
     description: "La plus grosse soirée mousse de l'année ! DJ international, 3 pistes de danse, animations jusqu'au bout de la nuit.",
-    image: "https://picsum.photos/seed/foam1/400/250"
+    image: "https://picsum.photos/seed/foam1/400/250",
+    map: "https://www.google.com/maps?q=Le+Diapason+Rennes&ll=48.1155,-1.6366&z=17"
   },
   {
     id: "2",
@@ -23,7 +19,8 @@ const events = [
     city: "Rennes",
     category: "soirée",
     description: "Soirée électro avec les meilleurs DJ's de la scène rennaise. Ambiance garantie !",
-    image: "https://picsum.photos/seed/electro1/400/250"
+    image: "https://picsum.photos/seed/electro1/400/250",
+    map: "https://www.google.com/maps?q=L'Étage+Rennes&ll=48.1143,-1.6738&z=17"
   },
   {
     id: "3",
@@ -33,7 +30,8 @@ const events = [
     city: "Rennes",
     category: "soirée",
     description: "Revivez les tubes des années 80 ! Dress code : fluo obligatoire. Concours de dance en milieu de soirée.",
-    image: "https://picsum.photos/seed/80s1/400/250"
+    image: "https://picsum.photos/seed/80s1/400/250",
+    map: "https://www.google.com/maps?q=Le+Liberté+Rennes&ll=48.1101,-1.6818&z=17"
   },
   {
     id: "4",
@@ -43,7 +41,8 @@ const events = [
     city: "Rennes",
     category: "soirée",
     description: "La soirée d'Halloween la plus terrifiante de Rennes. Déguisement obligatoire, élection du meilleur costume !",
-    image: "https://picsum.photos/seed/halloween1/400/250"
+    image: "https://picsum.photos/seed/halloween1/400/250",
+    map: "https://www.google.com/maps?q=Le+Pyg+Rennes&ll=48.1120,-1.6660&z=17"
   },
   {
     id: "5",
@@ -53,7 +52,8 @@ const events = [
     city: "Rennes",
     category: "soirée",
     description: "Enflammez la piste sur des rythmes latinos : salsa, bachata, reggaeton. Cours d'initiation à 21h.",
-    image: "https://picsum.photos/seed/latino1/400/250"
+    image: "https://picsum.photos/seed/latino1/400/250",
+    map: "https://www.google.com/maps?q=Le+Backstage+Rennes&ll=48.1090,-1.6700&z=17"
   },
 
   // RENNES - Concerts
@@ -65,7 +65,8 @@ const events = [
     city: "Rennes",
     category: "concert",
     description: "Tribute band des Strokes pour une soirée rock endiablée. Petit prix étudiant !",
-    image: "https://picsum.photos/seed/rock1/400/250"
+    image: "https://picsum.photos/seed/rock1/400/250",
+    map: "https://www.google.com/maps?q=L'Ubu+Rennes&ll=48.1145,-1.6735&z=17"
   },
   {
     id: "7",
@@ -75,7 +76,8 @@ const events = [
     city: "Rennes",
     category: "concert",
     description: "Soirée jazz intimiste avec le quartet de Marc Dupont. Ambiance feutrée, cocktails d'exception.",
-    image: "https://picsum.photos/seed/jazz1/400/250"
+    image: "https://picsum.photos/seed/jazz1/400/250",
+    map: "https://www.google.com/maps?q=Le+Liberté+Rennes&ll=48.1101,-1.6818&z=17"
   },
   {
     id: "8",
@@ -85,7 +87,8 @@ const events = [
     city: "Rennes",
     category: "concert",
     description: "Scène ouverte pour les rappeurs en herbe. Battles, freestyles, ambiance Hip-Hop authentique.",
-    image: "https://picsum.photos/seed/rap1/400/250"
+    image: "https://picsum.photos/seed/rap1/400/250",
+    map: "https://www.google.com/maps?q=Le+Jardin+Moderne+Rennes&ll=48.1290,-1.6530&z=17"
   },
   {
     id: "9",
@@ -95,7 +98,8 @@ const events = [
     city: "Rennes",
     category: "concert",
     description: "3 groupes indie pop émergents pour une soirée découverte. Bar local et foodtrucks sur place.",
-    image: "https://picsum.photos/seed/indie1/400/250"
+    image: "https://picsum.photos/seed/indie1/400/250",
+    map: "https://www.google.com/maps?q=La+Cité+Rennes&ll=48.1095,-1.6680&z=17"
   },
 
   // RENNES - Festivals
@@ -107,7 +111,8 @@ const events = [
     city: "Rennes",
     category: "festival",
     description: "LE festival incontournable de découvertes musicales. 3 jours, 70 concerts, tous styles confondus.",
-    image: "https://picsum.photos/seed/trans1/400/250"
+    image: "https://picsum.photos/seed/trans1/400/250",
+    map: "https://www.google.com/maps?q=Parc+Expo+Rennes&ll=48.0925,-1.6802&z=17"
   },
   {
     id: "11",
@@ -117,7 +122,8 @@ const events = [
     city: "Rennes",
     category: "festival",
     description: "Festival de musiques du monde. Découvrez des sonorités venues des 4 coins de la planète.",
-    image: "https://picsum.photos/seed/mythos1/400/250"
+    image: "https://picsum.photos/seed/mythos1/400/250",
+    map: "https://www.google.com/maps?q=Esplanade+Charles+de+Gaulle+Rennes&ll=48.1080,-1.6805&z=17"
   },
 
   // RENNES - Open-air
@@ -129,7 +135,8 @@ const events = [
     city: "Rennes",
     category: "open-air",
     description: "Open-air au coucher du soleil. Techno, house, ambiance chill. BYO (Bring Your Own) autorisé.",
-    image: "https://picsum.photos/seed/sunset1/400/250"
+    image: "https://picsum.photos/seed/sunset1/400/250",
+    map: "https://www.google.com/maps?q=Prairies+Saint-Martin+Rennes&ll=48.1005,-1.6390&z=17"
   },
   {
     id: "13",
@@ -139,7 +146,8 @@ const events = [
     city: "Rennes",
     category: "open-air",
     description: "Rave en pleine nature. Sound-system XXL, DJ's techno hardcore. Navettes depuis Rennes.",
-    image: "https://picsum.photos/seed/rave1/400/250"
+    image: "https://picsum.photos/seed/rave1/400/250",
+    map: "https://www.google.com/maps?q=Forêt+de+Brocéliande&ll=48.0020,-2.2500&z=12"
   },
 
   // LE MANS - Soirées
@@ -151,7 +159,8 @@ const events = [
     city: "Le Mans",
     category: "soirée",
     description: "Plongez dans une mer de mousse ! DJ résident, boissons à prix réduit jusqu'à minuit.",
-    image: "https://picsum.photos/seed/foam2/400/250"
+    image: "https://picsum.photos/seed/foam2/400/250",
+    map: "https://www.google.com/maps?q=Le+Zinc+Le+Mans&ll=48.0075,0.2005&z=17"
   },
   {
     id: "15",
@@ -161,7 +170,8 @@ const events = [
     city: "Le Mans",
     category: "soirée",
     description: "Soirée 100% étudiante avec tarif préférentiel sur présentation de la carte. 3 ambiances, 3 salles.",
-    image: "https://picsum.photos/seed/blanche1/400/250"
+    image: "https://picsum.photos/seed/blanche1/400/250",
+    map: "https://www.google.com/maps?q=Le+Reflet+Le+Mans&ll=48.0100,0.1980&z=17"
   },
   {
     id: "16",
@@ -171,7 +181,8 @@ const events = [
     city: "Le Mans",
     category: "soirée",
     description: "Retour dans les années disco ! Boule à facettes, paillettes et funk. DJ Funkmaster aux platines.",
-    image: "https://picsum.photos/seed/disco1/400/250"
+    image: "https://picsum.photos/seed/disco1/400/250",
+    map: "https://www.google.com/maps?q=VIP+Room+Le+Mans&ll=48.0085,0.2020&z=17"
   },
   {
     id: "17",
@@ -181,7 +192,8 @@ const events = [
     city: "Le Mans",
     category: "soirée",
     description: "Montez sur scène et chantez vos tubes préférés ! Blind test musical à 23h avec cadeaux à gagner.",
-    image: "https://picsum.photos/seed/karaoke1/400/250"
+    image: "https://picsum.photos/seed/karaoke1/400/250",
+    map: "https://www.google.com/maps?q=Le+Barock+Le+Mans&ll=48.0060,0.1995&z=17"
   },
   {
     id: "18",
@@ -191,7 +203,8 @@ const events = [
     city: "Le Mans",
     category: "soirée",
     description: "Soirée techno underground dans un hangar industriel. Line-up surprise, entrée gratuite avant minuit.",
-    image: "https://picsum.photos/seed/warehouse1/400/250"
+    image: "https://picsum.photos/seed/warehouse1/400/250",
+    map: "https://www.google.com/maps?q=Hangar+24+Le+Mans&ll=48.0120,0.2100&z=17"
   },
 
   // LE MANS - Concerts
@@ -203,7 +216,8 @@ const events = [
     city: "Le Mans",
     category: "concert",
     description: "Soirée métal avec 3 groupes locaux. Mosh pit garanti ! Bar rock avec bières artisanales.",
-    image: "https://picsum.photos/seed/metal1/400/250"
+    image: "https://picsum.photos/seed/metal1/400/250",
+    map: "https://www.google.com/maps?q=L'Oasis+Le+Mans&ll=48.0095,0.1960&z=17"
   },
   {
     id: "20",
@@ -213,7 +227,8 @@ const events = [
     city: "Le Mans",
     category: "concert",
     description: "Concert acoustique intimiste. Folk, indie, chanson française. Ambiance cosy et chaleureuse.",
-    image: "https://picsum.photos/seed/acoustic1/400/250"
+    image: "https://picsum.photos/seed/acoustic1/400/250",
+    map: "https://www.google.com/maps?q=Le+Café+du+Port+Le+Mans&ll=48.0070,0.1930&z=17"
   },
   {
     id: "21",
@@ -223,7 +238,8 @@ const events = [
     city: "Le Mans",
     category: "concert",
     description: "Soirée reggae avec un groupe jamaïcain en tournée. Bonne humeur et vibes positives garanties.",
-    image: "https://picsum.photos/seed/reggae1/400/250"
+    image: "https://picsum.photos/seed/reggae1/400/250",
+    map: "https://www.google.com/maps?q=Le+Noctambule+Le+Mans&ll=48.0115,0.2035&z=17"
   },
   {
     id: "22",
@@ -233,7 +249,8 @@ const events = [
     city: "Le Mans",
     category: "concert",
     description: "Concert d'électro expérimentale avec projections vidéo. Pour les amateurs d'avant-garde.",
-    image: "https://picsum.photos/seed/experimental1/400/250"
+    image: "https://picsum.photos/seed/experimental1/400/250",
+    map: "https://www.google.com/maps?q=Le+Pixel+Le+Mans&ll=48.0080,0.2000&z=17"
   },
 
   // LE MANS - Festivals
@@ -245,7 +262,8 @@ const events = [
     city: "Le Mans",
     category: "festival",
     description: "Festival dans le cadre magique de l'abbaye. Musiques classiques et contemporaines se rencontrent.",
-    image: "https://picsum.photos/seed/epau1/400/250"
+    image: "https://picsum.photos/seed/epau1/400/250",
+    map: "https://www.google.com/maps?q=Abbaye+de+l'Épau+Le+Mans&ll=48.0375,0.2215&z=17"
   },
   {
     id: "24",
@@ -255,7 +273,8 @@ const events = [
     city: "Le Mans",
     category: "festival",
     description: "Festival pop-rock avec des groupes régionaux. 2 jours de concerts, village associatif, animations.",
-    image: "https://picsum.photos/seed/hophop1/400/250"
+    image: "https://picsum.photos/seed/hophop1/400/250",
+    map: "https://www.google.com/maps?q=Esplanade+Jean+Rueff+Le+Mans&ll=48.0060,0.1905&z=17"
   },
 
   // LE MANS - Open-air
@@ -267,7 +286,8 @@ const events = [
     city: "Le Mans",
     category: "open-air",
     description: "Open-air sur le mythique circuit des 24h du Mans. Techno, trance, ambiance de folie jusqu'au levé du soleil.",
-    image: "https://picsum.photos/seed/circuit1/400/250"
+    image: "https://picsum.photos/seed/circuit1/400/250",
+    map: "https://www.google.com/maps?q=Circuit+Bugatti+Le+Mans&ll=47.9370,0.2256&z=17"
   },
   {
     id: "26",
@@ -277,93 +297,101 @@ const events = [
     city: "Le Mans",
     category: "open-air",
     description: "Open-air écolo en pleine forêt. House music, food-trucks bio, respect de l'environnement.",
-    image: "https://picsum.photos/seed/nature1/400/250"
+    image: "https://picsum.photos/seed/nature1/400/250",
+    map: "https://www.google.com/maps?q=Forêt+de+Bercé&ll=47.9500,0.4500&z=12"
   },
 
   // NANTES - Culture & Expositions
-{
-  id: "27",
-  name: "Expo Street Art Nantes",
-  date: "2025-11-20",
-  location: "Les Machines de l’Île",
-  city: "Nantes",
-  category: "exposition",
-  description: "Une expo en plein air dédiée au street art et graffiti, avec des artistes locaux et internationaux. Entrée gratuite !",
-  image: "https://picsum.photos/seed/streetart1/400/250"
-},
-{
-  id: "28",
-  name: "Festival du Film d’Auteur",
-  date: "2025-11-27",
-  location: "Cinéma Le Katorza",
-  city: "Nantes",
-  category: "culture",
-  description: "Projections de films indépendants et rencontres avec les réalisateurs. Cérémonie de clôture et remise de prix.",
-  image: "https://picsum.photos/seed/film1/400/250"
-},
-{
-  id: "29",
-  name: "Salon du Goût et des Saveurs",
-  date: "2025-12-03",
-  location: "Parc de la Beaujoire",
-  city: "Nantes",
-  category: "gastronomie",
-  description: "Dégustations, ateliers de cuisine, et stands de producteurs locaux. Un vrai paradis pour les gourmets !",
-  image: "https://picsum.photos/seed/gout1/400/250"
-},
-{
-  id: "30",
-  name: "Théâtre Impro Party",
-  date: "2025-12-10",
-  location: "Théâtre Graslin",
-  city: "Nantes",
-  category: "théâtre",
-  description: "Une soirée d’improvisation hilarante où le public choisit les thèmes ! Rires garantis toute la soirée.",
-  image: "https://picsum.photos/seed/impro1/400/250"
-},
+  {
+    id: "27",
+    name: "Expo Street Art Nantes",
+    date: "2025-11-20",
+    location: "Les Machines de l’Île",
+    city: "Nantes",
+    category: "exposition",
+    description: "Une expo en plein air dédiée au street art et graffiti, avec des artistes locaux et internationaux. Entrée gratuite !",
+    image: "https://picsum.photos/seed/streetart1/400/250",
+    map: "https://www.google.com/maps?q=Les+Machines+de+l'Île+Nantes&ll=47.2060,-1.5640&z=17"
+  },
+  {
+    id: "28",
+    name: "Festival du Film d’Auteur",
+    date: "2025-11-27",
+    location: "Cinéma Le Katorza",
+    city: "Nantes",
+    category: "culture",
+    description: "Projections de films indépendants et rencontres avec les réalisateurs. Cérémonie de clôture et remise de prix.",
+    image: "https://picsum.photos/seed/film1/400/250",
+    map: "https://www.google.com/maps?q=Cinéma+Le+Katorza+Nantes&ll=47.2145,-1.5585&z=17"
+  },
+  {
+    id: "29",
+    name: "Salon du Goût et des Saveurs",
+    date: "2025-12-03",
+    location: "Parc de la Beaujoire",
+    city: "Nantes",
+    category: "gastronomie",
+    description: "Dégustations, ateliers de cuisine, et stands de producteurs locaux. Un vrai paradis pour les gourmets !",
+    image: "https://picsum.photos/seed/gout1/400/250",
+    map: "https://www.google.com/maps?q=Parc+de+la+Beaujoire+Nantes&ll=47.2560,-1.5250&z=17"
+  },
+  {
+    id: "30",
+    name: "Théâtre Impro Party",
+    date: "2025-12-10",
+    location: "Théâtre Graslin",
+    city: "Nantes",
+    category: "théâtre",
+    description: "Une soirée d’improvisation hilarante où le public choisit les thèmes ! Rires garantis toute la soirée.",
+    image: "https://picsum.photos/seed/impro1/400/250",
+    map: "https://www.google.com/maps?q=Théâtre+Graslin+Nantes&ll=47.2160,-1.5625&z=17"
+  },
 
-// ANGERS - Sport & Bien-être
-{
-  id: "31",
-  name: "Trail Urbain d’Angers",
-  date: "2025-11-17",
-  location: "Centre-ville",
-  city: "Angers",
-  category: "sport",
-  description: "Un parcours sportif à travers les rues et monuments d’Angers. Course accessible à tous les niveaux.",
-  image: "https://picsum.photos/seed/trail1/400/250"
-},
-{
-  id: "32",
-  name: "Yoga & Chill Festival",
-  date: "2025-11-24",
-  location: "Parc Balzac",
-  city: "Angers",
-  category: "bien-être",
-  description: "2 jours de yoga, méditation et relaxation dans un cadre naturel. Food-trucks végé et tisanes à volonté.",
-  image: "https://picsum.photos/seed/yoga1/400/250"
-},
-{
-  id: "33",
-  name: "LAN Party Angevine",
-  date: "2025-12-07",
-  location: "Espace Jean Carmet",
-  city: "Angers",
-  category: "gaming",
-  description: "Tournois de jeux PC et console toute la nuit ! Stands de cosplay, food et goodies geek 💻🎮.",
-  image: "https://picsum.photos/seed/lan1/400/250"
-},
-{
-  id: "34",
-  name: "Marche Gourmande d’Hiver",
-  date: "2025-12-14",
-  location: "Vignobles d’Anjou",
-  city: "Angers",
-  category: "nature",
-  description: "Balade dans les vignes avec dégustations de produits locaux à chaque étape. Ambiance conviviale et festive.",
-  image: "https://picsum.photos/seed/marche1/400/250"
-}
-
+  // ANGERS - Sport & Bien-être
+  {
+    id: "31",
+    name: "Trail Urbain d’Angers",
+    date: "2025-11-17",
+    location: "Centre-ville",
+    city: "Angers",
+    category: "sport",
+    description: "Un parcours sportif à travers les rues et monuments d’Angers. Course accessible à tous les niveaux.",
+    image: "https://picsum.photos/seed/trail1/400/250",
+    map: "https://www.google.com/maps?q=Centre-ville+Angers&ll=47.4736,-0.5541&z=16"
+  },
+  {
+    id: "32",
+    name: "Yoga & Chill Festival",
+    date: "2025-11-24",
+    location: "Parc Balzac",
+    city: "Angers",
+    category: "bien-être",
+    description: "2 jours de yoga, méditation et relaxation dans un cadre naturel. Food-trucks végé et tisanes à volonté.",
+    image: "https://picsum.photos/seed/yoga1/400/250",
+    map: "https://www.google.com/maps?q=Parc+Balzac+Angers&ll=47.4600,-0.5700&z=17"
+  },
+  {
+    id: "33",
+    name: "LAN Party Angevine",
+    date: "2025-12-07",
+    location: "Espace Jean Carmet",
+    city: "Angers",
+    category: "gaming",
+    description: "Tournois de jeux PC et console toute la nuit ! Stands de cosplay, food et goodies geek 💻🎮.",
+    image: "https://picsum.photos/seed/lan1/400/250",
+    map: "https://www.google.com/maps?q=Espace+Jean+Carmet+Angers&ll=47.4750,-0.5450&z=17"
+  },
+  {
+    id: "34",
+    name: "Marche Gourmande d’Hiver",
+    date: "2025-12-14",
+    location: "Vignobles d’Anjou",
+    city: "Angers",
+    category: "nature",
+    description: "Balade dans les vignes avec dégustations de produits locaux à chaque étape. Ambiance conviviale et festive.",
+    image: "https://picsum.photos/seed/marche1/400/250",
+    map: "https://www.google.com/maps?q=Vignobles+d'Anjou&ll=47.4000,-0.7000&z=12"
+  }
 ];
 
 module.exports = events;
