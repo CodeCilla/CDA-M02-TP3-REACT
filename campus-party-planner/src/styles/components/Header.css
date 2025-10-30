@@ -68,7 +68,6 @@
 /* Responsive UwU */
 @media (max-width: 600px) {
   .header {
-    flex-direction: column;
     align-items: center;
     gap: 8px;
     text-align: center;
