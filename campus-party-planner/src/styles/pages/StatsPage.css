@@ -1,54 +1,67 @@
-.event-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.8rem;
-  padding: 2rem 1rem;
-  justify-items: center;
-  width: 100%;
-  max-width: 1200px;
+/* ---------- 1.  VARIABLES (light mode) ---------- */
+:root {
+  --bg: #ffffff;
+  --text: #1f1f1f;
+  --card-bg: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 18px rgba(0,0,0,.08);
+  --accent: #ff5c8d;
+  --accent-2: #ff97c2;
+}
+
+/* ---------- 2.  DARK OVERRIDES ---------- */
+.stats-page--dark {
+  --bg: rgba(20,20,25,.95);
+  --text: #e0e0e0;
+  --card-bg: #2a2a30;
+  --shadow: 0 4px 18px rgba(0,0,0,.35);
+  --accent: #ff5c8d;   /* same pink, still visible on dark */
+  --accent-2: #ff97c2;
+}
+
+/* ---------- 3.  LAYOUT (unchanged) ---------- */
+.stats-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  transition: background .3s ease, color .3s ease;
+}
+
+.stats-page__content {
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.event-card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  overflow: hidden;
+/* ---------- 4.  CHART CARD ---------- */
+.stats-chart {
+  max-width: 500px;
+  width: 90%;
+  margin: 40px auto;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform .3s ease;
+}
+
+canvas {
   width: 100%;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: auto;
 }
 
-.event-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+/* ---------- 5.  TYPOGRAPHY ---------- */
+.stats-page__title {
+  font-size: 2.2rem;
+  margin-bottom: .5rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.event-card__image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.event-card__name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 0.8rem 1rem 0;
-  color: #222;
-}
-
-.event-card__location,
-.event-card__date,
-.event-card__category {
-  font-size: 0.875rem;
-  color: #555;
-  padding: 0 1rem 0.5rem;
-}
-
-.event-card__category {
-  color: #e53935;
-  font-weight: 600;
-  text-transform: lowercase;
+.stats-page__description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+  opacity: .8;
 }
