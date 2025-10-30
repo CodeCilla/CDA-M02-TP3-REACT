@@ -346,52 +346,6 @@ const events = [
     image: "https://picsum.photos/seed/impro1/400/250",
     map: "https://www.google.com/maps?q=Théâtre+Graslin+Nantes&ll=47.2160,-1.5625&z=17"
   },
-
-  // ANGERS - Sport & Bien-être
-  {
-    id: "31",
-    name: "Trail Urbain d’Angers",
-    date: "2025-11-17",
-    location: "Centre-ville",
-    city: "Angers",
-    category: "sport",
-    description: "Un parcours sportif à travers les rues et monuments d’Angers. Course accessible à tous les niveaux.",
-    image: "https://picsum.photos/seed/trail1/400/250",
-    map: "https://www.google.com/maps?q=Centre-ville+Angers&ll=47.4736,-0.5541&z=16"
-  },
-  {
-    id: "32",
-    name: "Yoga & Chill Festival",
-    date: "2025-11-24",
-    location: "Parc Balzac",
-    city: "Angers",
-    category: "bien-être",
-    description: "2 jours de yoga, méditation et relaxation dans un cadre naturel. Food-trucks végé et tisanes à volonté.",
-    image: "https://picsum.photos/seed/yoga1/400/250",
-    map: "https://www.google.com/maps?q=Parc+Balzac+Angers&ll=47.4600,-0.5700&z=17"
-  },
-  {
-    id: "33",
-    name: "LAN Party Angevine",
-    date: "2025-12-07",
-    location: "Espace Jean Carmet",
-    city: "Angers",
-    category: "gaming",
-    description: "Tournois de jeux PC et console toute la nuit ! Stands de cosplay, food et goodies geek 💻🎮.",
-    image: "https://picsum.photos/seed/lan1/400/250",
-    map: "https://www.google.com/maps?q=Espace+Jean+Carmet+Angers&ll=47.4750,-0.5450&z=17"
-  },
-  {
-    id: "34",
-    name: "Marche Gourmande d’Hiver",
-    date: "2025-12-14",
-    location: "Vignobles d’Anjou",
-    city: "Angers",
-    category: "nature",
-    description: "Balade dans les vignes avec dégustations de produits locaux à chaque étape. Ambiance conviviale et festive.",
-    image: "https://picsum.photos/seed/marche1/400/250",
-    map: "https://www.google.com/maps?q=Vignobles+d'Anjou&ll=47.4000,-0.7000&z=12"
-  }
 ];
 
 module.exports = events;
