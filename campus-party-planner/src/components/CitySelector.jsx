@@ -1,39 +1,32 @@
 import { useContext, useEffect, useState } from "react";
 import { EventContext } from "../context/EventContext";
 import { fetchCities, fetchEvents } from "../services/api";
-import "../styles/components/CitySelector.css";
+import "../styles/components/Selector.css";
 
 function CitySelector() {
-  const { selectedCity, setCity, setEvents } = useContext(EventContext); // ➜ import setEvents
+  const { selectedCity, selectedCategory, setCity, setEvents } =
+    useContext(EventContext);
   const [cities, setCities] = useState([]);
 
-  // 1. load cities once
+  // 💫 Load cities once
   useEffect(() => {
     fetchCities().then((c) => {
       setCities(c);
-      if (c.length) setCity(c[0]);       // auto-select first city
+      if (c.length) setCity(""); // default to “All Cities”
     });
   }, []);
 
-  // 2. load events whenever city changes
-useEffect(() => {
-  if (!selectedCity) {
-    // “All Cities” — fetch every city’s events in parallel
-    Promise.all(cities.map(c => fetchEvents(c)))
-      .then(arrays => arrays.flat())           // merge all results
-      .then(setEvents);
-  } else {
-    // single city — your existing code
-    fetchEvents(selectedCity).then(setEvents);
-  }
-}, [selectedCity, cities]);
+  // 🌸 Load events when city or category changes
+  useEffect(() => {
+    fetchEvents(selectedCity, selectedCategory).then(setEvents);
+  }, [selectedCity, selectedCategory]);
 
   return (
-    <div className="city-selector">
+    <div className="selector">
       <select value={selectedCity} onChange={(e) => setCity(e.target.value)}>
         <option value="">All Cities</option>
         {cities.map((city) => (
-          <option id={city} value={city}>
+          <option key={city} value={city}>
             {city}
           </option>
         ))}

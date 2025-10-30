@@ -1,17 +1,26 @@
-.city-selector {
+/* Shared selector container wrapper for horizontal layout */
+.selectors-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* center the whole group */
+  gap: 20px; /* space between city & category */
   margin: 20px auto 10px;
-  width: 100%;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
 }
 
-.city-selector select {
+/* Each selector box */
+.selector {
+  display: flex;
+  justify-content: center;
+}
+
+/* Shared select styling */
+.selector select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   background: var(--card-bg);
   color: var(--muted);
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: var(--radius);
   padding: 10px 14px;
   font-size: 1rem;
@@ -26,24 +35,27 @@
   background-size: 1rem 1rem;
 }
 
-.city-selector select:hover {
+.selector select:hover {
   border-color: var(--accent);
   box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
   color: var(--accent);
 }
 
-.city-selector select:focus {
+.selector select:focus {
   border-color: var(--accent-2);
   box-shadow: 0 0 0 3px rgba(214, 51, 132, 0.2);
   color: var(--accent-2);
 }
 
-.city-selector option {
+/* Options styling */
+.selector option {
   background: var(--bg);
   color: #222;
 }
-[data-theme="dark"] .city-selector option {
+
+/* Dark theme option fix */
+[data-theme="dark"] .selector option {
   background: #181a1f;
   color: #eee;
 }
