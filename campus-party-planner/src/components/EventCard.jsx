@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { FaHeart, FaRegHeart } from 'react-icons/fa'; // Utilise Font Awesome pour les icônes de cœur plein et vide
 import { EventContext } from '../context/EventContext';
+import './EventCard.css';
 
 const EventCard = ({ id, name, image, date, location, category, isLiked }) => {
   const { toggleLike } = useContext(EventContext);
