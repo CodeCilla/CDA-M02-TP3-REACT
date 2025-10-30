@@ -1,0 +1,6 @@
+/* remove the browser default margin */
+body {
+  margin: 0;
+  padding: 0;   /* not strictly required, but harmless */
+  box-sizing: border-box;  /* optional, keeps totals predictable */
+}

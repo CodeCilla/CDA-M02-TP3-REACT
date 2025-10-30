@@ -9,10 +9,29 @@ export function EventProvider({ children }) {
   const [selectedCity, setSelectedCity] = useState(''); // Ville choisie
   const [likedEvents, setLikedEvents] = useState([]); // Événements likés 💖
   const [selectedCategory, setSelectedCategory] = useState(''); // Catégorie choisie
+  const [darkmode, setDarkmode] = useState(false); // Mode sombre 🌑
 
   // --- FONCTIONS ---
   const setCity = (city) => setSelectedCity(city);
   const setCategory = (category) => setSelectedCategory(category);
+
+  const toggleDarkmode = () => {
+    setDarkmode((prev) => {
+      const next = !prev;
+      localStorage.setItem('darkmode', JSON.stringify(next));
+      console.log('Darkmode set to:', next);
+      return next;
+    });
+  };
+
+useEffect(() => {
+  try {
+    const raw = localStorage.getItem('darkmode');
+    if (raw) setDarkmode(JSON.parse(raw));
+  } catch {
+    console.error('Erreur lors du chargement du mode sombre depuis le localStorage');
+  }
+}, []);
 
   const toggleLike = (id) => {
     let updated;
@@ -49,6 +68,8 @@ export function EventProvider({ children }) {
         loadLikes,
         selectedCategory,
         setCategory,
+        toggleDarkmode,
+        darkmode,
       }}
     >
       {children}
