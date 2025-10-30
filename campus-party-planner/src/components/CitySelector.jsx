@@ -33,7 +33,7 @@ useEffect(() => {
       <select value={selectedCity} onChange={(e) => setCity(e.target.value)}>
         <option value="">All Cities</option>
         {cities.map((city) => (
-          <option key={city} value={city}>
+          <option id={city} value={city}>
             {city}
           </option>
         ))}

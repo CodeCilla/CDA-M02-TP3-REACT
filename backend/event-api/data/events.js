@@ -278,7 +278,92 @@ const events = [
     category: "open-air",
     description: "Open-air écolo en pleine forêt. House music, food-trucks bio, respect de l'environnement.",
     image: "https://picsum.photos/seed/nature1/400/250"
-  }
+  },
+
+  // NANTES - Culture & Expositions
+{
+  id: "27",
+  name: "Expo Street Art Nantes",
+  date: "2025-11-20",
+  location: "Les Machines de l’Île",
+  city: "Nantes",
+  category: "exposition",
+  description: "Une expo en plein air dédiée au street art et graffiti, avec des artistes locaux et internationaux. Entrée gratuite !",
+  image: "https://picsum.photos/seed/streetart1/400/250"
+},
+{
+  id: "28",
+  name: "Festival du Film d’Auteur",
+  date: "2025-11-27",
+  location: "Cinéma Le Katorza",
+  city: "Nantes",
+  category: "culture",
+  description: "Projections de films indépendants et rencontres avec les réalisateurs. Cérémonie de clôture et remise de prix.",
+  image: "https://picsum.photos/seed/film1/400/250"
+},
+{
+  id: "29",
+  name: "Salon du Goût et des Saveurs",
+  date: "2025-12-03",
+  location: "Parc de la Beaujoire",
+  city: "Nantes",
+  category: "gastronomie",
+  description: "Dégustations, ateliers de cuisine, et stands de producteurs locaux. Un vrai paradis pour les gourmets !",
+  image: "https://picsum.photos/seed/gout1/400/250"
+},
+{
+  id: "30",
+  name: "Théâtre Impro Party",
+  date: "2025-12-10",
+  location: "Théâtre Graslin",
+  city: "Nantes",
+  category: "théâtre",
+  description: "Une soirée d’improvisation hilarante où le public choisit les thèmes ! Rires garantis toute la soirée.",
+  image: "https://picsum.photos/seed/impro1/400/250"
+},
+
+// ANGERS - Sport & Bien-être
+{
+  id: "31",
+  name: "Trail Urbain d’Angers",
+  date: "2025-11-17",
+  location: "Centre-ville",
+  city: "Angers",
+  category: "sport",
+  description: "Un parcours sportif à travers les rues et monuments d’Angers. Course accessible à tous les niveaux.",
+  image: "https://picsum.photos/seed/trail1/400/250"
+},
+{
+  id: "32",
+  name: "Yoga & Chill Festival",
+  date: "2025-11-24",
+  location: "Parc Balzac",
+  city: "Angers",
+  category: "bien-être",
+  description: "2 jours de yoga, méditation et relaxation dans un cadre naturel. Food-trucks végé et tisanes à volonté.",
+  image: "https://picsum.photos/seed/yoga1/400/250"
+},
+{
+  id: "33",
+  name: "LAN Party Angevine",
+  date: "2025-12-07",
+  location: "Espace Jean Carmet",
+  city: "Angers",
+  category: "gaming",
+  description: "Tournois de jeux PC et console toute la nuit ! Stands de cosplay, food et goodies geek 💻🎮.",
+  image: "https://picsum.photos/seed/lan1/400/250"
+},
+{
+  id: "34",
+  name: "Marche Gourmande d’Hiver",
+  date: "2025-12-14",
+  location: "Vignobles d’Anjou",
+  city: "Angers",
+  category: "nature",
+  description: "Balade dans les vignes avec dégustations de produits locaux à chaque étape. Ambiance conviviale et festive.",
+  image: "https://picsum.photos/seed/marche1/400/250"
+}
+
 ];
 
 module.exports = events;
