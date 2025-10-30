@@ -8,9 +8,11 @@ export function EventProvider({ children }) {
   const [events, setEvents] = useState([]); // Liste des événements
   const [selectedCity, setSelectedCity] = useState(''); // Ville choisie
   const [likedEvents, setLikedEvents] = useState([]); // Événements likés 💖
+  const [selectedCategory, setSelectedCategory] = useState(''); // Catégorie choisie
 
   // --- FONCTIONS ---
   const setCity = (city) => setSelectedCity(city);
+  const setCategory = (category) => setSelectedCategory(category);
 
   const toggleLike = (id) => {
     const updated = likedEvents.includes(id)
@@ -42,6 +44,8 @@ export function EventProvider({ children }) {
         likedEvents,
         toggleLike,
         loadLikes,
+        selectedCategory,
+        setCategory,
       }}
     >
       {children}
