@@ -29,10 +29,10 @@ export function EventProvider({ children }) {
     if (stored) setLikedEvents(JSON.parse(stored));
   };
 
-  // --- Effet au montage : charger les likes sauvegardés ---
   useEffect(() => {
     loadLikes();
   }, []);
+  
 
   // --- Fournir les données et fonctions aux composants enfants ---
   return (
