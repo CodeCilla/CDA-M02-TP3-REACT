@@ -5,12 +5,7 @@ import CitySelector from '../components/CitySelector';
 import CategorySelector from '../components/CategorySelector';
 import '../styles/pages/StatsPage.css';
 import { useContext } from "react";
-import StatsChart from "../components/StatsChart";
-import Header from "../components/Header";
-import CitySelector from "../components/CitySelector";
-import CategorySelector from "../components/CategorySelector";
 import { EventContext } from "../context/EventContext"; // ← grab darkmode flag
-import "../styles/pages/StatsPage.css";
 
 function StatsPage() {
   const { darkmode } = useContext(EventContext);
@@ -42,14 +37,15 @@ function StatsPage() {
           Ici vous pouvez trouver diverses statistiques sur les fêtes du
           campus!! 🥳
         </p>
+        <div className='charts-wrapper'>
+          <div className="stats-chart">
+            <StatsChart />
+          </div>
+          <div className="stats-chart">
+            <LikesChart />
+          </div>
+        </div>
       </div>
-      <div className="stats-chart">
-        <StatsChart />
-      </div>
-      <div className="stats-chart">
-        <LikesChart />
-      </div>
-    </div>
     </div>
   );
 }
