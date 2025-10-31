@@ -6,8 +6,9 @@ import '../styles/components/StatsChart.css';
 
 ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-export default function StatsChart() {
+export default function LikesChart() {
   const { events } = useContext(EventContext);
+  const likedEventIds = JSON.parse(localStorage.getItem("likedEvents") || "[]");
 
 const chartColors = [
   "#E63946", // strong red
@@ -25,24 +26,26 @@ const chartColors = [
 ];
 
 
-  const counts = events.reduce((acc, { category }) => {
+const likeCounts = events.reduce((acc, { category, id }) => {
+  if (likedEventIds.includes(id)) {
     acc[category] = (acc[category] || 0) + 1;
-    return acc;
-  }, {});
+  }
+  return acc;
+}, {});
 
 
-  const eventsCategoryByCities = {
-    labels: Object.keys(counts),
+  const likeByCategory = {
+    labels: Object.keys(likeCounts),
     datasets: [
       {
-        label: "Répartition des événements par ville",
-        data: Object.values(counts),
+        label: "Événements likés par catégorie",
+        data: Object.values(likeCounts),
         backgroundColor: chartColors
       },
     ],
   };
 
   return (
-    <Pie data={eventsCategoryByCities} />
+    <Pie data={likeByCategory} />
   );
 }

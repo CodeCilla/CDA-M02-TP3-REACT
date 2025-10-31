@@ -52,3 +52,13 @@
   font-weight: 600;
   text-transform: lowercase;
 }
+
+.charts-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: start;
+  justify-items: center;
+  width: 100%;
+  padding: 20px;
+}
