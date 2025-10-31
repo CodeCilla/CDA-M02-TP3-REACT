@@ -4,8 +4,8 @@ export async function fetchEvents(city = null, category = null) {
   let url = `${API_URL}/events`;
 
   const params = new URLSearchParams();
-  if (city) params.append("city", city);
-  if (category) params.append("category", category);
+  if (city) params.append('city', city);
+  if (category) params.append('category', category);
 
   if ([...params].length > 0) url += `?${params.toString()}`;
 

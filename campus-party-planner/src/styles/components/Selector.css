@@ -11,21 +11,21 @@
   position: relative;
   background: var(--glass);
   backdrop-filter: blur(10px) saturate(140%);
-
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .selector:hover {
   border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
 /* dropdown */
-.selector__item {
+.selector select {
   appearance: none;
   border: none;
   outline: none;
@@ -38,14 +38,6 @@
   cursor: pointer;
   width: 220px;
   transition: color 0.25s ease;
-}
-
-.selector__item:hover {
-  color: var(--accent);
-}
-
-.selector__item:focus {
-  color: var(--accent);
 }
 
 /* lil custom arrow UwU */
@@ -61,25 +53,24 @@
   transition: color 0.25s ease;
 }
 
-.selector__option:hover,
-.selector__option:focus {
+.selector:hover::after {
   color: var(--accent);
 }
 
-.selector:hover::after {
+.selector select:hover {
   color: var(--accent);
 }
 
 /* options in dropdown */
 .selector option {
   background: var(--card-bg);
-  color: var(--text);
+  color: #222;
 }
 
 /* 🌒 Dark mode */
 .selector--dark {
   background: rgba(20, 20, 25, 0.85);
-  border: 2px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 

@@ -13,7 +13,10 @@ const EventCard = ({ event, liked, onClick }) => {
   };
 
   return (
-    <div className={`event-card ${darkmode ? 'event-card--dark' : ''}`} onClick={onClick}>
+    <div
+      className={`event-card ${darkmode ? 'event-card--dark' : ''}`}
+      onClick={onClick}
+    >
       <h2 className='event-card__name'>{name}</h2>
       <img className='event-card__image' src={image} alt={name} />
       <p className='event-card__location'>Lieu: {location}</p>

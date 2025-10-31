@@ -21,6 +21,7 @@ function Selector({ type }) {
       try {
         if (type === 'city') {
           data = await fetchCities();
+          console.log('Fetched cities:', data);
           if (data.length) setCity(''); // default to “All Cities”
         } else if (type === 'category') {
           data = await fetchCategories();
@@ -32,8 +33,11 @@ function Selector({ type }) {
       }
     };
 
+    
+
     fetchData();
-  }, [type, setCity, setCategory, selectedCategory]);
+  }, [type, setCity, selectedCity, setCategory, selectedCategory]);
+  
 
   // 🌸 Load events when city or category changes
   useEffect(() => {
@@ -50,7 +54,6 @@ function Selector({ type }) {
   }, [selectedCity, selectedCategory, setEvents]);
 
   return (
-
     <div className={`selector ${darkmode ? 'selector--dark' : ''}`}>
       <select
         className='selector__item'
@@ -62,9 +65,7 @@ function Selector({ type }) {
             : setCategory(e.target.value);
         }}
       >
-        <option value=''>
-          {type === 'city' ? 'Villes' : 'Catégories'}
-        </option>
+        <option value=''>{type === 'city' ? 'Villes' : 'Catégories'}</option>
         {options.map((option) => (
           <option className='selector__option' key={option} value={option}>
             {option}
@@ -72,7 +73,6 @@ function Selector({ type }) {
         ))}
       </select>
     </div>
-
   );
 }
 

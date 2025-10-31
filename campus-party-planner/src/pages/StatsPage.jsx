@@ -1,7 +1,8 @@
 import StatsChart from '../components/StatsChart';
 import LikesChart from '../components/LikesChart';
 import Header from '../components/Header';
-import Selector from '../components/Selector';
+import CitySelector from '../components/CitySelector';
+import CategorySelector from '../components/CategorySelector';
 import '../styles/pages/StatsPage.css';
 import { useContext } from 'react';
 import { EventContext } from '../context/EventContext'; // ← grab darkmode flag
@@ -14,8 +15,8 @@ function StatsPage() {
       <Header />
 
       <div className='selectors'>
-        <Selector type='city' />
-        <Selector type='category' />
+        <CitySelector />
+        <CategorySelector />
       </div>
 
       <div className='stats-page__content'>
