@@ -10,12 +10,13 @@ function CategorySelector() {
 
 
   // 💫 Load categories when component mounts
-  useEffect(() => {
-    fetchCategories().then((c) => {
-      setCategories(c);
-      if (c.length) setCategory(""); // default to “All Categories”
-    });
-  }, [setCategory]);
+useEffect(() => {
+  fetchCategories().then(c => {
+    setCategories(c);
+    // set default only if nothing is selected yet
+    if (c.length && !selectedCategory) setCategory("");
+  });
+}, [setCategory, selectedCategory]); // add selectedCategory to deps
 
   // 🌸 Load events when category or city changes
   useEffect(() => {
