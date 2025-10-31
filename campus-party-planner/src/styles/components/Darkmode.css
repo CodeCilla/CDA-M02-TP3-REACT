@@ -1,0 +1,33 @@
+.darkmode-btn {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.darkmode-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.darkmode-btn--active {
+  background: rgba(40, 40, 50, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.darkmode-btn .icon {
+  pointer-events: none; /* just to make sure icon doesn’t interfere */
+  transition: transform 0.3s ease;
+}
+
+.darkmode-btn--active .icon {
+  transform: rotate(20deg); /* cute little tilt when active UwU */
+}
