@@ -7,9 +7,9 @@ export function EventProvider({ children }) {
   // --- STATES ---
   const [events, setEvents] = useState([]); // Liste des événements
   const [selectedCity, setSelectedCity] = useState(''); // Ville choisie
-  const [likedEvents, setLikedEvents] = useState([]); // Événements likés 💖
+  const [likedEvents, setLikedEvents] = useState([]); // Événements likés
   const [selectedCategory, setSelectedCategory] = useState(''); // Catégorie choisie
-  const [darkmode, setDarkmode] = useState(false); // Mode sombre 🌑
+  const [darkmode, setDarkmode] = useState(false); // Mode sombre
 
   // --- FONCTIONS ---
   const setCity = (city) => setSelectedCity(city);
