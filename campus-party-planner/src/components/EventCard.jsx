@@ -8,8 +8,9 @@ const EventCard = ({ event, liked, onClick }) => {
   const { toggleLike, darkmode } = useContext(EventContext);
   const { id, name, image, date, location, category } = event;
 
-  const handleLikeClick = () => {
+  const handleLikeClick = (e) => {
     toggleLike(id);
+    e.stopPropagation(); // Empêche la propagation du clic pour éviter de déclencher onClick du parent
   };
 
   return (
