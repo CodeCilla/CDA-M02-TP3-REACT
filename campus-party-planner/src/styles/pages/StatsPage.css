@@ -1,0 +1,92 @@
+:root {
+  --bg: #ffffff;
+  --text: #1f1f1f;
+  --card-bg: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  --accent: #ff5c8d;
+  --accent-2: #ff97c2;
+}
+
+.stats-page--dark {
+  --bg: rgba(20, 20, 25, 0.95);
+  --text: #e0e0e0;
+  --card-bg: #2a2a30;
+  --shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  --accent: #ff5c8d;
+  --accent-2: #ff97c2;
+}
+
+.stats-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.stats-page__content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stats-page__title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stats-page__description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.charts-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* allows wrapping automatically */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 1rem;
+}
+
+.stats-chart {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 350px; /* flexible base size */
+  max-width: 420px; /* avoid being too wide */
+  height: 300px; /* consistent height */
+  position: relative; /* Chart.js needs this */
+}
+
+.stats-chart:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* 🌸 responsive magic for smol screens UwU */
+@media (max-width: 768px) {
+  .charts-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .stats-chart {
+    width: 90%; /* shrink gracefully inside container */
+    height: auto; /* let chart adapt vertically */
+  }
+
+  .stats-chart canvas {
+    width: 100%;  /* force canvas to follow container */
+    height: auto;
+    max-width: 100%;
+  }
+}

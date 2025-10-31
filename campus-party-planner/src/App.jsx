@@ -1,19 +1,23 @@
-
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-    
-createRoot(document.getElementById('root')).render(
-  <Router>
-    <main>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/stats' element={<StatsPage />} />
-      </Routes>
-    </main>
-  </Router>)
-  
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {EventProvider} from './context/EventContext';
+import HomePage from './pages/HomePage';
+import StatsPage from './pages/StatsPage';
 
 
+function App() {
+  return(
+    <EventProvider>
+      <Router>
+        <main>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/stats' element={<StatsPage />} />
+          </Routes>
+        </main>
+      </Router>
+    </EventProvider>
+  );
+}
+export default App;
 
 
