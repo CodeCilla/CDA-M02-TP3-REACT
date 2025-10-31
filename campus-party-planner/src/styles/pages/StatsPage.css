@@ -59,6 +59,15 @@ canvas {
   -webkit-text-fill-color: transparent;
 }
 
+.charts-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: start;
+  justify-items: center;
+  width: 100%;
+  padding: 20px;
+}
 .stats-page__description {
   font-size: 1rem;
   margin-bottom: 2rem;

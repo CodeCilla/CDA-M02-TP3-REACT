@@ -1,3 +1,9 @@
+import StatsChart from '../components/StatsChart';
+import LikesChart from '../components/LikesChart';
+import Header from '../components/Header';
+import CitySelector from '../components/CitySelector';
+import CategorySelector from '../components/CategorySelector';
+import '../styles/pages/StatsPage.css';
 import { useContext } from "react";
 import StatsChart from "../components/StatsChart";
 import Header from "../components/Header";
@@ -40,6 +46,10 @@ function StatsPage() {
       <div className="stats-chart">
         <StatsChart />
       </div>
+      <div className="stats-chart">
+        <LikesChart />
+      </div>
+    </div>
     </div>
   );
 }
