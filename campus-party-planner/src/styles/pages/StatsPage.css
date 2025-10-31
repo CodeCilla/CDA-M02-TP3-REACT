@@ -47,17 +47,23 @@
 
 .charts-wrapper {
   display: flex;
-  flex-direction: row;
-  gap: 50px;
+  flex-wrap: wrap; /* allows wrapping automatically */
   justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 1rem;
 }
 
 .stats-chart {
   background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 28px;
+  padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 350px; /* flexible base size */
+  max-width: 420px; /* avoid being too wide */
+  height: 300px; /* consistent height */
+  position: relative; /* Chart.js needs this */
 }
 
 .stats-chart:hover {
@@ -65,13 +71,22 @@
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
 }
 
+/* 🌸 responsive magic for smol screens UwU */
 @media (max-width: 768px) {
   .charts-wrapper {
     flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
   .stats-chart {
-    margin-bottom: 20px;
+    width: 90%; /* shrink gracefully inside container */
+    height: auto; /* let chart adapt vertically */
+  }
+
+  .stats-chart canvas {
+    width: 100%;  /* force canvas to follow container */
+    height: auto;
+    max-width: 100%;
   }
 }
-

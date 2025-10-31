@@ -9,40 +9,46 @@ ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Tooltip, Le
 export default function StatsChart() {
   const { events } = useContext(EventContext);
 
-const chartColors = [
-  "#E63946", // strong red
-  "#F3722C", // vivid orange
-  "#F9C74F", // bright yellow
-  "#90BE6D", // fresh green
-  "#43AA8B", // teal
-  "#577590", // blue
-  "#4D908E", // muted cyan
-  "#B56576", // dusty rose / mauve
-  "#9A031E", // deep crimson
-  "#FB8500", // bold amber
-  "#3A86FF", // vibrant blue
-  "#8338EC"  // purple
-];
-
+  const chartColors = [
+    "#E63946",
+    "#F3722C",
+    "#F9C74F",
+    "#90BE6D",
+    "#43AA8B",
+    "#577590",
+    "#4D908E",
+    "#B56576",
+    "#9A031E",
+    "#FB8500",
+    "#3A86FF",
+    "#8338EC"
+  ];
 
   const counts = events.reduce((acc, { category }) => {
     acc[category] = (acc[category] || 0) + 1;
     return acc;
   }, {});
 
-
   const eventsCategoryByCities = {
     labels: Object.keys(counts),
     datasets: [
       {
-        label: "Répartition des événements par ville",
+        label: "Répartition des événements par catégorie",
         data: Object.values(counts),
-        backgroundColor: chartColors
+        backgroundColor: chartColors,
       },
     ],
   };
 
-  return (
-    <Pie data={eventsCategoryByCities} />
-  );
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
+  return <Pie data={eventsCategoryByCities} options={options} />;
 }
