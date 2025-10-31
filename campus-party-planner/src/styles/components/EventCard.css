@@ -17,7 +17,8 @@
 
 /* ----------  light (default) ---------- */
 .event-card {
-  width: 100%;
+  width: 25%;
+  align-items: center;
   max-width: var(--max-width);
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -25,7 +26,7 @@
   overflow: hidden;
   padding: calc(var(--gap) * 1.25);
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto auto auto;
   gap: var(--gap);
   transition: transform 280ms cubic-bezier(.2,.9,.3,1), box-shadow 280ms;
   margin: 0 auto;
@@ -48,7 +49,6 @@
 
 .event-card__image {
   width: 100%;
-  height: 180px;
   object-fit: cover;
   border-radius: 10px;
   display: block;
@@ -216,4 +216,12 @@
   0% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,122,182,0)); }
   40% { transform: scale(1.4); filter: drop-shadow(0 0 14px #ff7ac8); }
   100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,122,182,0)); }
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    width: 95%;
+    gap: 15px;
+    padding: 20px 10px;
+  }
 }

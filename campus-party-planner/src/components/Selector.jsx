@@ -21,11 +21,9 @@ function Selector({ type }) {
       try {
         if (type === 'city') {
           data = await fetchCities();
-          console.log('Fetched cities:', data);
           if (data.length) setCity(''); // default to “All Cities”
         } else if (type === 'category') {
           data = await fetchCategories();
-          console.log('Fetched categories:', data);
           if (data.length && !selectedCategory) setCategory(''); // set default only if nothing is selected yet
         }
         setOptions(data);
@@ -42,7 +40,6 @@ function Selector({ type }) {
     const loadEvents = async () => {
       try {
         const events = await fetchEvents(selectedCity, selectedCategory);
-        console.log('Fetched events:', events);
         setEvents(events);
       } catch (error) {
         console.error('Error fetching events:', error);
@@ -53,8 +50,10 @@ function Selector({ type }) {
   }, [selectedCity, selectedCategory, setEvents]);
 
   return (
+
     <div className={`selector ${darkmode ? 'selector--dark' : ''}`}>
       <select
+        className='selector__item'
         value={type === 'city' ? selectedCity : selectedCategory}
         onChange={(e) => {
           console.log('Selector changed:', e.target.value);
@@ -64,15 +63,16 @@ function Selector({ type }) {
         }}
       >
         <option value=''>
-          All {type === 'city' ? 'Cities' : 'Categories'}
+          {type === 'city' ? 'Villes' : 'Catégories'}
         </option>
         {options.map((option) => (
-          <option key={option} value={option}>
+          <option className='selector__option' key={option} value={option}>
             {option}
           </option>
         ))}
       </select>
     </div>
+
   );
 }
 

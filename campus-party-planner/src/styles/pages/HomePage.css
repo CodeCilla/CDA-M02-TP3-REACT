@@ -10,3 +10,10 @@
 .home-page--dark {
     background: rgba(20, 20, 25, 0.95);
 }
+
+.selectors{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}

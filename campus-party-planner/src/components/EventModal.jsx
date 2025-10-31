@@ -43,12 +43,6 @@ const EventModal = ({ event, isOpen, onClose }) => {
         <div className='details__category'>
           <p className='details__category--text'>{category}</p>
         </div>
-        {/* <footer className='modal-footer'>
-          <a href={map} target='_blank' rel='noreferrer'>
-            {' '}
-            S'y rendre
-          </a>
-        </footer> */}
       </div>
     </Modal>
   );
